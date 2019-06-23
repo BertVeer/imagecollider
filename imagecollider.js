@@ -30,12 +30,12 @@ class ImageCollider {
 
 	collidePixels(imageA, xA, yA, imageB, xB, yB, rect) {
 		this.context.clearRect(0,0, rect.w, rect.h);
-	    this.draw(imageA, Math.max(xB-xA,0), Math.max(yB-yA,0), rect.w, rect.h, "xor");
-	    this.draw(imageB, Math.max(xA-xB,0), Math.max(yA-yB,0), rect.w, rect.h, "destination-in");
-	    let imageData = this.context.getImageData(0, 0, rect.w, rect.h);
-	    for (let i=3; i<imageData.data.length; i+=4) {
-	    	if (imageData.data[i] > ImageCollider_alphaTreshold) return true;
-	    }
+		this.draw(imageA, Math.max(xB-xA,0), Math.max(yB-yA,0), rect.w, rect.h, "xor");
+		this.draw(imageB, Math.max(xA-xB,0), Math.max(yA-yB,0), rect.w, rect.h, "destination-in");
+		let imageData = this.context.getImageData(0, 0, rect.w, rect.h);
+		for (let i=3; i<imageData.data.length; i+=4) {
+			if (imageData.data[i] > ImageCollider_alphaTreshold) return true;
+		}
 		return false;
 	}
 
