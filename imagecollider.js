@@ -15,8 +15,8 @@ class ImageCollider {
 	}
 
 	draw(image, x, y, w, h, op) {
-	    this.context.globalCompositeOperation = op;
-	    this.context.drawImage(image, x, y, w, h, 0, 0, w, h);
+		this.context.globalCompositeOperation = op;
+		this.context.drawImage(image, x, y, w, h, 0, 0, w, h);
 	}
 
 	overlappingRect(rectA, rectB) {
